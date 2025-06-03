@@ -109,29 +109,7 @@ void USB_EP0_SETUP(void) {
               case 0:   USB_pDescr = USB_STR_DESCR_i0; break;
               case 1:   USB_pDescr = USB_STR_DESCR_i1; break;
               case 2:   USB_pDescr = USB_STR_DESCR_i2; break;
-              case 3:   USB_pDescr = USB_STR_DESCR_i3; break;
-              #ifdef USB_STR_DESCR_i4
-              case 4:   USB_pDescr = USB_STR_DESCR_i4; break;
-              #endif
-              #ifdef USB_STR_DESCR_i5
-              case 5:   USB_pDescr = USB_STR_DESCR_i5; break;
-              #endif
-              #ifdef USB_STR_DESCR_i6
-              case 6:   USB_pDescr = USB_STR_DESCR_i6; break;
-              #endif
-              #ifdef USB_STR_DESCR_i7
-              case 7:   USB_pDescr = USB_STR_DESCR_i7; break;
-              #endif
-              #ifdef USB_STR_DESCR_i8
-              case 8:   USB_pDescr = USB_STR_DESCR_i8; break;
-              #endif
-              #ifdef USB_STR_DESCR_i9
-              case 9:   USB_pDescr = USB_STR_DESCR_i9; break;
-              #endif
-              #ifdef USB_STR_DESCR_ixee
-              case 0xee:  USB_pDescr = USB_STR_DESCR_ixee; break;
-              #endif
-              default:  USB_pDescr = USB_STR_DESCR_ix; break;
+              default:  len = 0xff; break;
             }
             len = USB_pDescr[0];                  // descriptor length
             break;

@@ -64,12 +64,7 @@ extern __code USB_CFG_DESCR_CDC CfgDescr;
 extern __code uint16_t LangDescr[];
 extern __code uint16_t ManufDescr[];
 extern __code uint16_t ProdDescr[];
-extern __code uint16_t SerDescr[];
-extern __code uint16_t InterfDescr[];
 
 #define USB_STR_DESCR_i0    (uint8_t*)LangDescr
 #define USB_STR_DESCR_i1    (uint8_t*)ManufDescr
 #define USB_STR_DESCR_i2    (uint8_t*)ProdDescr
-#define USB_STR_DESCR_i3    (uint8_t*)SerDescr
-#define USB_STR_DESCR_i4    (uint8_t*)InterfDescr
-#define USB_STR_DESCR_ix    (uint8_t*)SerDescr

@@ -20,7 +20,7 @@ __code USB_DEV_DESCR DevDescr = {
   .bcdDevice          = USB_DEVICE_VERSION,     // device version
   .iManufacturer      = 1,                      // index of Manufacturer String Descr
   .iProduct           = 2,                      // index of Product String Descriptor
-  .iSerialNumber      = 3,                      // index of Serial Number String Descr
+  .iSerialNumber      = 0,                      // index of Serial Number String Descr
   .bNumConfigurations = 1                       // number of possible configurations
 };
 
@@ -50,7 +50,7 @@ __code USB_CFG_DESCR_CDC CfgDescr = {
     .bFunctionClass     = USB_DEV_CLASS_COMM,     // function class: CDC (0x02)
     .bFunctionSubClass  = 2,                      // 2: Abstract Control Model (ACM)
     .bFunctionProtocol  = 1,                      // 1: AT command protocol
-    .iFunction          = 4                       // index of String Descriptor
+    .iFunction          = 0                       // index of String Descriptor
   },
 
   // Interface Descriptor: Interface 0 (CDC)
@@ -63,7 +63,7 @@ __code USB_CFG_DESCR_CDC CfgDescr = {
     .bInterfaceClass    = USB_DEV_CLASS_COMM,     // interface class: CDC (0x02)
     .bInterfaceSubClass = 2,                      // 2: Abstract Control Model (ACM)
     .bInterfaceProtocol = 1,                      // 1: AT command protocol
-    .iInterface         = 4                       // index of String Descriptor
+    .iInterface         = 0                       // index of String Descriptor
   },
 
   // Functional Descriptors for Interface 0
@@ -94,7 +94,7 @@ __code USB_CFG_DESCR_CDC CfgDescr = {
     .bInterfaceClass    = USB_DEV_CLASS_DATA,     // interface class: data (0x0a)
     .bInterfaceSubClass = 0,                      // interface sub class
     .bInterfaceProtocol = 0,                      // interface protocol
-    .iInterface         = 4                       // index of String Descriptor
+    .iInterface         = 0                       // index of String Descriptor
   },
 
   // Endpoint Descriptor: Endpoint 2 (OUT)
@@ -134,10 +134,3 @@ __code uint16_t ManufDescr[] = {
 __code uint16_t ProdDescr[] = {
   ((uint16_t)USB_DESCR_TYP_STRING << 8) | sizeof(ProdDescr), PRODUCT_STR };
 
-// Serial String Descriptor (Index 3)
-__code uint16_t SerDescr[] = {
-  ((uint16_t)USB_DESCR_TYP_STRING << 8) | sizeof(SerDescr), SERIAL_STR };
-
-// Interface String Descriptor (Index 4)
-__code uint16_t InterfDescr[] = {
-  ((uint16_t)USB_DESCR_TYP_STRING << 8) | sizeof(InterfDescr), INTERFACE_STR };
